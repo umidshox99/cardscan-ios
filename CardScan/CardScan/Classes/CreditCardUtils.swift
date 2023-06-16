@@ -13,6 +13,9 @@ public struct CreditCardUtils {
     private static let prefixesDinersClub = ["300", "301", "302", "303", "304", "305", "309", "36", "38", "39"]
     private static let prefixesDiscover = ["6011", "64", "65"]
     private static let prefixesJcb = ["35"]
+    private static let prefixesUzcard = ["8600","5600"]
+    private static let prefixesHumo = ["9860"]
+    private static let prefixesAtto = ["9987"]
     private static let prefixesMastercard = ["2221", "2222", "2223", "2224", "2225", "2226",
                                      "2227", "2228", "2229", "223", "224", "225", "226",
                                      "227", "228", "229", "23", "24", "25", "26", "270",
@@ -260,6 +263,12 @@ public struct CreditCardUtils {
             return CardNetwork.UNIONPAY
         case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesRegional):
             return CardNetwork.REGIONAL
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesUzcard):
+            return CardNetwork.UZCARD
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesHumo):
+            return CardNetwork.HUMO
+        case hasAnyPrefix(cardNumber: cardNumber, prefixes: prefixesAtto):
+            return CardNetwork.ATTO
         default:
             return CardNetwork.UNKNOWN
         }

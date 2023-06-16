@@ -17,10 +17,16 @@ import Foundation
     case JCB
     case DINERSCLUB
     case REGIONAL
+    case UZCARD
+    case HUMO
+    case ATTO
     case UNKNOWN
     
     public func toString() -> String {
         switch self {
+        case .UZCARD: return "Uzcard"
+        case .HUMO: return "Humo"
+        case .ATTO: return "Atto"
         case .VISA: return "Visa"
         case .MASTERCARD: return "MasterCard"
         case .AMEX: return "Amex"
