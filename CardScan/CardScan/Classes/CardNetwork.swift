@@ -7,7 +7,6 @@
 
 import Foundation
 
-@available(*, deprecated, message: "Replaced by stripe card scan. See https://github.com/stripe/stripe-ios/tree/master/StripeCardScan")
 @objc public enum CardNetwork: Int {
     case VISA
     case MASTERCARD
@@ -17,10 +16,16 @@ import Foundation
     case JCB
     case DINERSCLUB
     case REGIONAL
+    case UZCARD
+    case HUMO
+    case ATTO
     case UNKNOWN
     
     public func toString() -> String {
         switch self {
+        case .UZCARD: return "Uzcard"
+        case .HUMO: return "Humo"
+        case .ATTO: return "Atto"
         case .VISA: return "Visa"
         case .MASTERCARD: return "MasterCard"
         case .AMEX: return "Amex"
