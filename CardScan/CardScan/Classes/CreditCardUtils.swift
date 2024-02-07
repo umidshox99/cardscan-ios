@@ -22,7 +22,7 @@ public struct CreditCardUtils {
                                      "271", "2720", "50", "51", "52", "53", "54", "55",
                                      "67"]
     private static let prefixesUnionPay = ["62"]
-    private static let prefixesVisa = ["4"]
+    private static let prefixesVisa = ["4","9860","4067","8600","5600"]
 
     public static var prefixesRegional: [String] = []
     
@@ -416,6 +416,16 @@ extension CreditCardUtils {
         return determineCardNetwork(cardNumber: number) == CardNetwork.MASTERCARD
     }
     
+    public static func isHumo(number: String) -> Bool {
+        return determineCardNetwork(cardNumber: number) == CardNetwork.HUMO
+    }
+    public static func isUzCard(number: String) -> Bool {
+        return determineCardNetwork(cardNumber: number) == CardNetwork.UZCARD
+    }
+    public static func isAtto(number: String) -> Bool {
+        return determineCardNetwork(cardNumber: number) == CardNetwork.ATTO
+    }
+
     public static func isUnionPay(number: String) -> Bool {
         return determineCardNetwork(cardNumber: number) == CardNetwork.UNIONPAY
     }
